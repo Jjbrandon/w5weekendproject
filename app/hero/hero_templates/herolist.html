@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1 style="text-align: center; color: white;">{{ current_user.username }}'s Avengers</h1>
+{% for p in posts %}
+<div class="cardcontainer">
+    <div class="card" style="width: 22vw; height: 60vh; display: inline-block;">
+        <div class="front">
+            <img src="{{ p.image }}" class="card-img-top" style="height: 33vh;" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">{{ p.name }}</h5>
+                <p class="card-text">{{ p.superpower }}</p>
+                <p style="color: grey; font-size: 13px; text-align: center;">Hover for description</p>
+            </div>
+        </div>
+        <div class="back">
+            {{ p.description }}
+            
+        </div>
+    </div>
+</div>
+{% endfor %}
+{% endblock content %}

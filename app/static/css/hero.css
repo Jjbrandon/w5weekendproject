@@ -1,0 +1,41 @@
+.card-title{
+    text-align: center;
+}
+
+.card{
+    position: relative;
+    margin-left: 2vw;
+    margin-top: 10vh;
+    background-color: rgb(0, 0, 0);
+    color: white;
+    transition: ease-in-out .7s;
+    transform-style: preserve-3d;
+}
+
+.cardcontainer{
+    display: inline-block;
+    perspective: 900px;
+    text-align: center;
+}
+
+.front, .back {
+    position: absolute;
+    top: 0;
+    left: 0;
+    box-shadow: 0 27px 55px 0 rgba(0, 0, 0, 0.3), 0 17px 17px 0 rgba(0, 0, 0, 0.15);
+    backface-visibility: hidden;
+  }
+
+  .cardcontainer:hover .card {
+    transform: rotateY(180deg);
+  }
+  .back {
+    transform: rotateY(180deg);
+    justify-content: center;
+  }
+
+  fieldset{
+      color:white;
+  }
+
+

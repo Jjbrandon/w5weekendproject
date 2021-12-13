@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1 style="color: white;">Create your very own Avengers Squad!</h1>
+
+<form action="" method="POST">
+    {{ form.hidden_tag() }}
+    <div class="form-group">
+        <fieldset>
+            {{ form.name.label }}
+            {{ form.name(class='form-control', placeholder='Name your hero!') }}
+        </fieldset>
+        <fieldset>
+            {{ form.image.label }}
+            {{ form.image(class='form-control', placeholder='Pic of your hero!') }}
+        </fieldset>
+        <fieldset>
+            {{ form.superpower.label }}
+            {{ form.superpower(class='form-control', placeholder="What is your hero's power?") }}
+        </fieldset>
+        <fieldset>
+            {{ form.description.label }}
+            {{ form.description(class='form-control', placeholder="Describe your hero in any way you'd like!") }}
+        </fieldset>
+        <fieldset>
+            {{ form.comics_appeared_in.label }}
+            {{ form.comics_appeared_in(class='form-control', placeholder='How many comics has your hero been in?') }}
+        </fieldset>
+        {{ form.submit(class='btn btn-primary') }}
+    </div>
+    
+</form>
+
+{% endblock content %}
