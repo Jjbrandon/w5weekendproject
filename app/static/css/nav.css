@@ -1,7 +1,7 @@
 
 #navbg{
     background-color: #24262b;
-    height: 10vh;
+    height: 11vh;
 }
 
 .navbar-brand{
@@ -19,4 +19,12 @@ body{
 
 form {
     color: white;
+}
+
+#pokesearch{
+    height: 5vh;
+    margin-right: 3rem;
+    gap:1rem;
+    font-size: small;
+    
 }

@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% if pokemon != '' %}
+<h1 style="text-align: center; color: white;">Your Pokemon</h1>
+<div style="margin-left: 37%;" class="cardcontainer">
+    <div class="card" style="width: 22vw; height: 60vh; justify-self: center;">
+        <div class="front">
+            <img src="{{ pokemon['image'] }}" class="card-img-top" style="height: 30vh; margin-left: 3vw;" alt="...">
+            <div class="card-body">
+                <h5 style="margin-left: 3vw;" class="card-title">{{ pokemon['name'] }}</h5>
+
+                <ul style="list-style: none;">
+                {% for ability in pokemon['abilities'] %}
+                <li>{{ ability }}</li>
+                {% endfor %}
+                </ul>
+                <p style="color: grey; font-size: 13px; text-align: center; margin-left: 4vw;">Hover to see games</p>
+            </div>
+        </div>
+        <div class="back">
+            <ul style="list-style: none;">
+                <h5 style="margin-right: 2vw;">Appeared in These Games</h5>
+                {% for game in pokemon['game_list'] %}
+                <li style="margin-right: 1vw; font-size: x-small;">{{ game }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</div>
+{% else %}
+<h1 style="color:white">Your Pokemon doesn't exist! Check your spelling maybe?</h1>
+{% endif %}
+{% endblock content %}

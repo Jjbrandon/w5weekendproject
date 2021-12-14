@@ -37,6 +37,19 @@ class PostHero(db.Model):
         self.comics_appeared_in = comics_appeared_in
         self.user_id = user_id
 
+class Pokemon(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    pokemon_name = db.Column(db.String(50), nullable=False, unique=False)
+    image = db.Column(db.String(200), nullable=False)
+    abilities = db.Column(db.String(200), nullable=False)
+    game_list = db.Column(db.String(500), nullable=False)
+    
+    def __init__(self, pokemon_name, image, abilities, game_list):
+        self.pokemon_name = pokemon_name
+        self.image = image
+        self.abilities = abilities
+        self.game_list = game_list
+
 
 
     

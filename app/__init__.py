@@ -10,6 +10,7 @@ from .models import User, db
 ###### bringing in routes for registration #######
 from .auth.routes import auth
 from .hero.routes import hero
+from .pokemon.routes import pokemon
 
 
 
@@ -17,7 +18,7 @@ app = Flask(__name__)
 app.config.from_object(Config)
 migrate = Migrate(app,db)
 
-from app import routes, models, auth, hero
+from app import routes, models, auth, hero, pokemon
 
 from .models import User, PostHero, db
 
@@ -33,3 +34,4 @@ def load_user(user_id):
 
 app.register_blueprint(auth)
 app.register_blueprint(hero)
+app.register_blueprint(pokemon)
